@@ -3,7 +3,7 @@
 **Affiliate urls looks kind of like this:**
 
 ```html
-http://affiliate-url.com/?ad=123122&amp;campaign=123&id=213&url=beautiful-url.com
+http://affiliate-url.com/?ad=123122&amp;campaign=123&amp;id=213&amp;url=beautiful-url.com
 ```
 
 When hovering the url in the statusbar, how useful is that to the user?
