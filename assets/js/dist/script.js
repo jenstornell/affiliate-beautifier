@@ -10,7 +10,7 @@ class AffiliateBeautifier {
 
   defaults() {
     return {
-      selector: '[data-href]'
+      selector: 'a[data-href]'
     };
   }
 

@@ -1,93 +1,65 @@
 # Affiiate beautifier
 
-**Affiliate urls looks kind of like this:**
+*Version 1.2*
+
+Affiliate urls often looks like a mess, similar to below.
 
 ```html
 http://affiliate-url.com/?ad=123122&amp;campaign=123&amp;id=213&amp;url=beautiful-url.com
 ```
 
-When hovering the url in the statusbar, how useful is that to the user?
-
-**This is probably better:**
+This url looks better.
 
 ```html
 http://beautiful-url.com
 ```
 
-**About this plugin:**
+**In short**
 
-- Inspired by Google. Yes, Google does the same thing to their links.
-- Dependencies free (no depencencies, not even jQuery).
+- Inspired by Google. Google does the same thing to their links.
+- Dependencies free
+- Only 1KB
+- Uses ES6 version of javascript
+- Tested in Chrome, Firefox and Edge
 
 ## Install
 
-### 1. Add the script src
+### Javascript
 
-If possible put it just before `</body>`.
-
-```html
-<script src="http://example.com/affiliate-beautifier.js"></script>
-```
-
-### 2. Add the script
-
-This script has to load after the script file above.
+Put the script above `</body>`.
 
 ```html
+<script src="assets/js/dist/script.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-	affiliateBeautifier.init({
-		selector: 'a'
-	});
-});
+affiliateBeautifier();
 </script>
 ```
 
-Read more about [selectors](http://www.w3schools.com/cssref/css_selectors.asp) if needed.
-
-### 3. Add a link
+### HTML
 
 ```html
-<a href="http://affiliate-url.com" data-href="http://beautiful-url.com">
-	Link text
-</a>
+<a href="http://affiliate-url.com/long-and-not-nice" data-href="http://beautiful-url.com">Link text</a>
 ```
 
-### 4. Test it
+## Test it
 
-1. Hover the link and see if you have `http://beautiful-url.com` in the statusbar.
-2. Hold down your mouse over the link and see if it changes to `http://affiliate-url.com`. Drag passed the link before you release.
+Hover the url of the link. It should show the beautiful url, instead of the ugly affiliate url.
 
-## How it works
+When you click it you should get to the affiliate url. To prevent a click, you can drag the link instead. Then test if it has changed back on hover.
 
-In the examples I've shorten the affiliate url to just `http://affiliate-url.com` but in real life it's probably longer.
+## Options
 
-### Before load
+### selector
 
-- `href` should be your affiliate url.
-- `data-href` should be your beautiful url.
-
-```html
-<a href="http:/affiliate-url.com" data-href="http://beautiful-url.com">
+```js
+affiliateBeautifier({
+  selector: 'a[data-href]'
+});
 ```
 
-### After load
+## Donate
 
-- `href` and `data-href` has switched their place.'
-- On hover you will see `beautiful-url.com` in your statusbar.
-
-```html
-<a href="http://beautiful-url.com" data-href="http:/affiliate-url.com">
-```
-
-### On mousedown
-
-- On click the `data-href` will be set to `href` as well.
-- You will go to `http:/affiliate-url.com`.
-
-```html
-<a href="http:/affiliate-url.com" data-href="http:/affiliate-url.com">
-```
+Donate to [DevoneraAB](https://www.paypal.me/DevoneraAB) if you want.
 
 ## License
 
