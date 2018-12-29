@@ -17,7 +17,7 @@ http://beautiful-url.com
 **In short**
 
 - Inspired by Google. Google does the same thing to their links.
-- Dependencies free
+- Dependency free
 - Only 1KB
 - Uses ES6 version of javascript
 - Tested in Chrome, Firefox and Edge
@@ -45,7 +45,7 @@ affiliateBeautifier();
 
 Hover the url of the link. It should show the beautiful url, instead of the ugly affiliate url.
 
-When you click it you should get to the affiliate url. To prevent a click, you can drag the link instead. Then test if it has changed back on hover.
+When you click the link, it should switch to the affiliate url on mousedown. To prevent a click when testing, you can drag the link instead. After that, hover it and you should see the affiliate url instead.
 
 ## Options
 
