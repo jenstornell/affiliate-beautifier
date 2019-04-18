@@ -1,9 +1,9 @@
 class AffiliateBeautifier {
-  constructor() {
+  init() {
     this.switchAll();
     this.eventClick();
   }
-
+  
   eventClick() {
     ['mousedown', 'touchstart'].forEach((event) => {
       document.querySelectorAll('a[data-href]').forEach((element) => {
@@ -30,5 +30,6 @@ class AffiliateBeautifier {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  new AffiliateBeautifier();
+  let affiliate_beautifier = new AffiliateBeautifier();
+  affiliate_beautifier.init();
 });
