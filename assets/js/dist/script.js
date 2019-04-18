@@ -1,22 +1,12 @@
 class AffiliateBeautifier {
-  constructor(options) {
-    this.o = Object.assign({}, this.defaults(), options);
-
-    document.addEventListener('DOMContentLoaded', () => {
-      this.switchAll();
-      this.eventClick();
-    });
-  }
-
-  defaults() {
-    return {
-      selector: 'a[data-href]'
-    };
+  constructor() {
+    this.switchAll();
+    this.eventClick();
   }
 
   eventClick() {
     ['mousedown', 'touchstart'].forEach((event) => {
-      document.querySelectorAll(this.o.selector).forEach((element) => {
+      document.querySelectorAll('a[data-href]').forEach((element) => {
         element.addEventListener(event, (e) => {
           this.switch(e.target);
         });
@@ -25,7 +15,7 @@ class AffiliateBeautifier {
   }
 
   switchAll() {
-    document.querySelectorAll(this.o.selector).forEach((el) => {
+    document.querySelectorAll('a[data-href]').forEach((el) => {
       this.switch(el);
     });
   }
@@ -39,6 +29,6 @@ class AffiliateBeautifier {
   }
 }
 
-function affiliateBeautifier(args) {
-  new AffiliateBeautifier(args);
-}
+document.addEventListener("DOMContentLoaded", () => {
+  new AffiliateBeautifier();
+});

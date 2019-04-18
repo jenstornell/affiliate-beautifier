@@ -21,12 +21,7 @@
   </li>
 </ul>
 
-<script src="assets/js/dist/script.js"></script>
-<script>
-  affiliateBeautifier({
-    selector: 'a[data-href]'
-  });
-</script>      
+<script src="assets/js/dist/script.js?<?= time(); ?>"></script>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 # Affiiate beautifier
 
-*Version 1.2*
+*Version 1.3*
 
 Affiliate urls often looks like a mess, similar to below.
 
@@ -30,9 +30,6 @@ Put the script above `</body>`.
 
 ```html
 <script src="assets/js/dist/script.min.js"></script>
-<script>
-affiliateBeautifier();
-</script>
 ```
 
 ### HTML
@@ -46,16 +43,6 @@ affiliateBeautifier();
 Hover the url of the link. It should show the beautiful url, instead of the ugly affiliate url.
 
 When you click the link, it should switch to the affiliate url on mousedown. To prevent a click when testing, you can drag the link instead. After that, hover it and you should see the affiliate url instead.
-
-## Options
-
-### selector
-
-```js
-affiliateBeautifier({
-  selector: 'a[data-href]'
-});
-```
 
 ## Donate
 
