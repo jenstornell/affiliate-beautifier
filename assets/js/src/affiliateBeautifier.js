@@ -25,10 +25,7 @@ class AffiliateBeautifier {
   }
 
   switch(el) {
-    console.log(el);
     if (el.hasAttribute("data-ab-switch")) return;
-
-    console.log(el.getAttribute("data-ab-switch"));
 
     let href = el.getAttribute("href");
     let data_href = el.dataset.href;
