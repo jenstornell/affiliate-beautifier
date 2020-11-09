@@ -3,28 +3,37 @@ class AffiliateBeautifier {
     this.switchAll();
     this.eventClick();
   }
-  
+
   eventClick() {
-    ['mousedown', 'touchstart'].forEach((event) => {
-      document.querySelectorAll('a[data-href]').forEach((element) => {
+    ["mousedown", "touchstart"].forEach((event) => {
+      document.querySelectorAll("a[data-href]").forEach((element) => {
         element.addEventListener(event, (e) => {
-          this.switch(e.target);
+          this.switch(e.currentTarget);
+          e.currentTarget.dataset.abSwitch = "";
         });
       });
     });
   }
 
   switchAll() {
-    document.querySelectorAll('a[data-href]').forEach((el) => {
-      this.switch(el);
-    });
+    document
+      .querySelectorAll("a[data-href]:not([data-ab-active])")
+      .forEach((el) => {
+        this.switch(el);
+        el.dataset.abActive = "";
+      });
   }
 
   switch(el) {
-    let href = el.getAttribute('href');
+    console.log(el);
+    if (el.hasAttribute("data-ab-switch")) return;
+
+    console.log(el.getAttribute("data-ab-switch"));
+
+    let href = el.getAttribute("href");
     let data_href = el.dataset.href;
 
-    el.setAttribute('href', data_href);
+    el.setAttribute("href", data_href);
     el.dataset.href = href;
   }
 }
